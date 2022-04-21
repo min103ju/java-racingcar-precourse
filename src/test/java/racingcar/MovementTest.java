@@ -19,7 +19,7 @@ public class MovementTest {
 
         // Then
         assertThat(movement.isMovementSame(1)).isTrue();
+        assertThat(movement.getHyphen()).isEqualTo("-");
     }
-
 
 }
