@@ -10,11 +10,14 @@ public class Movement {
     private int movement = 0;
     private String hyphen = "";
 
-    public void isMove(int condition) {
-        if (MOVE_CONDITION_NUM <= condition) {
-            movement++;
-            hyphen += HYPHEN;
-        }
+    public boolean isMove(int condition) {
+        return MOVE_CONDITION_NUM <= condition;
+
+    }
+
+    public void move(int condition) {
+        movement++;
+        hyphen += HYPHEN;
     }
 
     public boolean isMovementSame(int askNum) {
