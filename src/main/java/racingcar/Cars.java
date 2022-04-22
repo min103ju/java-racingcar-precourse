@@ -1,5 +1,6 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,5 +28,25 @@ public class Cars {
 
     public int getCarsSize() {
         return this.cars.size();
+    }
+
+    public void play() {
+        for (Car car : this.cars) {
+            car.move(Randoms.pickNumberInRange(0, 9));
+        }
+    }
+
+    public List<String> getWinners(int attemptCount) {
+        List<String> winners = new ArrayList<>();
+        for (Car car : this.cars) {
+            checkAndSetCar(car, attemptCount, winners);
+        }
+        return winners;
+    }
+
+    private void checkAndSetCar(Car car, int attemptCount, List<String> winners) {
+        if (car.isMovementSame(attemptCount)) {
+            winners.add(car.getCarName());
+        }
     }
 }

@@ -24,7 +24,6 @@ public class Movement {
         return movement == askNum;
     }
 
-
     public String getHyphen() {
         return this.hyphen;
     }
