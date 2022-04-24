@@ -34,6 +34,7 @@ public class Cars {
         for (Car car : this.cars) {
             car.move(Randoms.pickNumberInRange(0, 9));
         }
+        System.out.println();
     }
 
     public List<String> getWinners(int attemptCount) {

@@ -10,10 +10,23 @@ public class RacingGame {
     private int attemptCount = 0;
 
     public RacingGame() {
-        System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-        this.cars = new Cars(Console.readLine());
+        boolean isExceptionOccur = true;
+        while (isExceptionOccur) {
+            isExceptionOccur = inputCarName();
+        }
         System.out.println("시도할 회수는 몇회인가요?");
         this.attemptCount = Integer.parseInt(Console.readLine());
+    }
+
+    private boolean inputCarName() {
+        try {
+            System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
+            this.cars = new Cars(Console.readLine());
+            return false;
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return true;
+        }
     }
 
     public void start() {
@@ -39,6 +52,5 @@ public class RacingGame {
         sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
     }
-
 
 }
