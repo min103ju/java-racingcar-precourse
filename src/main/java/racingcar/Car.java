@@ -23,13 +23,13 @@ public class Car {
 
     public void move(int randomValue) {
         if (movement.isMove(randomValue)) {
-            movement.move(randomValue);
-            print();
+            movement.move();
         }
+        print();
     }
 
     private void print() {
-        System.out.println(String.format("%s: %s", carName.getName(), movement.getHyphen()));
+        System.out.println(String.format("%s : %s", carName.getName(), movement.getHyphen()));
     }
 
     public boolean isMovementSame(int askNum) {

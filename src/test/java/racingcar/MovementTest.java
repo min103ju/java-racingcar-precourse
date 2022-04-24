@@ -15,7 +15,7 @@ public class MovementTest {
         Movement movement = new Movement();
 
         // When
-        movement.move(4);
+        movement.move();
 
         // Then
         assertThat(movement.isMovementSame(1)).isTrue();

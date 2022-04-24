@@ -12,10 +12,9 @@ public class Movement {
 
     public boolean isMove(int condition) {
         return MOVE_CONDITION_NUM <= condition;
-
     }
 
-    public void move(int condition) {
+    public void move() {
         movement++;
         hyphen += HYPHEN;
     }
